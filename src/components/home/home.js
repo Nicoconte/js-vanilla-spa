@@ -1,6 +1,6 @@
 import view from "./home.html"
 
-export default () => {
+const Home = () => {
     const divElement = document.createElement("div");
     divElement.innerHTML = view;
 
@@ -11,3 +11,5 @@ export default () => {
 
     return divElement;
 };
+
+export default Home;

@@ -4,7 +4,8 @@
  * 
  */
 
-import { pages } from '../components/index.components'
+import Home from './components/home/home';
+import Error404 from './components/error-404/error-404'
 
 const router = async (route) => {
 
@@ -13,10 +14,10 @@ const router = async (route) => {
     content.innerHTML = "";
 
     switch(route) {
-        case "#/":
-            return content.append(pages.home());
+        case "#/home":
+            return content.append(Home());            
         default:
-            return content.append(pages.error404());
+            return content.append(Error404());
     }
 
 };

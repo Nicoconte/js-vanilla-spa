@@ -1,4 +1,4 @@
-import { router } from "./routes/index.routes";
+import { router } from "./app.routing";
 
 
 const init = () => {
