@@ -1,15 +1,17 @@
-import view from "./home.html"
+import Component from "../../lib/component";
+
+import view from './home.html';
+import styles from './home.css';
 
 const Home = () => {
-    const divElement = document.createElement("div");
-    divElement.innerHTML = view;
 
-    const btnClick = divElement.querySelector("#btnClick");
-    btnClick.addEventListener("click", () => {
-        alert("clicked");
-    });
+    const homeComponent = new Component(view, styles);
 
-    return divElement;
+    homeComponent.html.querySelector("#btnClick").addEventListener('click', () => {
+        alert("Hola!");
+    })
+
+    return homeComponent.render();
 };
 
 export default Home;

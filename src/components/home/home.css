@@ -1,0 +1,25 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+.home-container {
+    width: 100%;
+    height:500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    background-color: rgba(0,0,0,0.5);
+    color:rgba(20, 238, 154, 0.5);
+}
+
+.home-container button {
+    margin-top: 50px;
+}
+
+.home-footer {
+    width:100%;
+    height:auto;
+}

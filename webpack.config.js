@@ -3,7 +3,7 @@ const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: ["@babel/polyfill", path.resolve(__dirname, "src/app.js")],
+  entry: ["@babel/polyfill", path.resolve(__dirname, "src/index.js")],
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
@@ -13,10 +13,22 @@ module.exports = {
     new Dotenv(),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
-    }),    
+    })
   ], 
   module: {
     rules: [
+      {
+        test: /\.css$/i,
+        use: [
+          'to-string-loader',
+          {
+            loader: 'css-loader',
+            options: { 
+              esModule: false,
+            }
+          }
+        ]
+      }, 
       {
         test: /\.(js)$/,
         exclude: /node_modules/,
@@ -25,7 +37,7 @@ module.exports = {
       {
         test: /\.html$/i,
         loader: "html-loader",
-      },      
+      }                 
     ],
   },
   devServer: {
