@@ -1,9 +1,13 @@
 class Events {
 
-    onClick(htmlElement, id, callback) {
-        htmlElement.querySelector(id).addEventListener('click', (e) => {
-            callback()
-        });
+    constructor(htmlElement) {
+        this.htmlElement = htmlElement
+    }
+
+    onClick(id, callback) {
+        this.htmlElement.querySelector(id).addEventListener('click', () => {
+            callback();
+        })
     }
 
 }

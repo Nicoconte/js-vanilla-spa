@@ -10,9 +10,7 @@ class Application {
 
     _init() {
          
-        window.location.href = "#" + window.location.hash
-
-        console.log("Ruta actual ", window.location.hash)
+        window.location.href = window.location.hash.includes("#") ? window.location.hash : "#" + window.location.hash; 
 
         router.changePage(window.location.hash);
 

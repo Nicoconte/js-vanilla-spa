@@ -12,7 +12,7 @@ class Router {
             return path;
         }
 
-        if (path.include("#")) {
+        if (path.includes("#")) {
             return path;
             
         } else {
@@ -28,13 +28,17 @@ class Router {
      */
     register(route) {
         //Si la ruta existe, no la registramos 
+
+        this.routes = route;
+
         if (this.routes.some(r => r.path == route.path)) {
             return;
         }   
 
-        route.path = this._addHashtag(route.path);
+        this.routes.forEach(route => {
+            route.path = this._addHashtag(route.path);
+        })
 
-        this.routes.push(route)
     }
 
     changePage(path) {

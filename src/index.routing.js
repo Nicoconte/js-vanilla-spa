@@ -1,30 +1,17 @@
 import { router } from './lib/routing';
 
-import Home from './components/home/home';
-import Error404 from './components/error-404/error-404'
+import HomeComponent from './components/home/home';
+import DashboardComponent from './components/dashboard/dashboard';
+import LoginComponent from './components/login/login';
 
 const initRoutes = () => {
 
-    router.register(
-        {
-            path: "home",
-            component: Home()
-        }
-    )
+    router.register([
+        { path: "home", component: HomeComponent },
+        { path: "login", component: LoginComponent },
+        { path: "dashboard", component: DashboardComponent }        
+    ])
 
-    router.register(
-        {
-            path: "home2",
-            component: Home()
-        }
-    )    
-
-    router.register(
-        {
-            path: "not-found",
-            component: Error404()
-        }        
-    )
 }
 
 export default initRoutes;

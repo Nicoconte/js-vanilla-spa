@@ -3,15 +3,28 @@ import Component from "../../lib/component";
 import view from './home.html';
 import styles from './home.css';
 
-const Home = () => {
+class HomeComponent extends Component {
 
-    const homeComponent = new Component(view, styles);
+    constructor(tagName, view, styles) {
+        
+        super(tagName, view, styles);
 
-    homeComponent.html.querySelector("#btnClick").addEventListener('click', () => {
-        alert("Hola!");
-    })
+        this.login();
 
-    return homeComponent.render();
-};
+        this.test();
+    }
 
-export default Home;
+    test() {
+        this.events.onClick("#btnClick", () => {
+            alert("Test");
+        })
+    }
+
+    login() {
+        this.events.onClick("#login-btn", () => {
+            alert("Login test");
+        })
+    }
+}
+
+export default new HomeComponent('app-home', view, styles).render();

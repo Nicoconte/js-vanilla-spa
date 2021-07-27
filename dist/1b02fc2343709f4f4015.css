@@ -1,9 +1,0 @@
-
-        var result = require("!!../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./index.css");
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
